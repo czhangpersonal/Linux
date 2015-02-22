@@ -76,12 +76,14 @@ Install MK802 Linux Kernel Source Code
     ln -s   ${MK802_DIR}    /lib/modules/3.0.36-t1+/linux-allwinner
 
 
-<br><br><
+<br><br>
 
 <b> Step 2: Install Driver for KY-LAN772AL (USB Ethenet Adapter) </b>
 
 <br>
 Download the driver from below, choose Linux kernel 3.x/2.6.x Driver <br> http://www.asix.com.tw/products.php?op=pItemdetail&PItemID=86;71;101
+
+Do the following to build and install kernel module. Note that there is already a binary asix.ko in this depository.
     
     export ASIX_DIR=/media/USB16GB/asix    
     cd $ASIX_DIR
