@@ -72,8 +72,8 @@ Install MK802 Linux Kernel Source Code
     make ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabi- -j4 modules
     
     # for building module later on:
-    ln -s         ${MK802_DIR}/linux-allwinner         /lib/modules/3.0.36-t1+/build
-    ln -s         ${MK802_DIR}         /lib/modules/3.0.36-t1+/linux-allwinner
+    ln -s   ${MK802_DIR}/linux-allwinner    /lib/modules/3.0.36-t1+/build
+    ln -s   ${MK802_DIR}    /lib/modules/3.0.36-t1+/linux-allwinner
 
 
 <br><br><br>
