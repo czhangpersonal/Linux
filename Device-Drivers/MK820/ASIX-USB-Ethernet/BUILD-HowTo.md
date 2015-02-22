@@ -1,7 +1,7 @@
 <b> Step 0:  Install Ubuntu Linux 12.04 on miniand:</b><br>
 https://www.miniand.com/forums/forums/2/topics/1?page=23
 
-<p></p>
+<br><br><br>
 
 
 <b> Step 1: Install Kernel Source - Miniand </b>
@@ -75,7 +75,8 @@ Install MK802 Linux Kernel Source Code
     ln -s         ${MK802_DIR}         /lib/modules/3.0.36-t1+/linux-allwinner
 
 
-    
+<br><br><br>
+
 <b> Step 2: Install Driver for KY-LAN772AL (USB Ethenet Adapter) </b>
     
 Download the driver from below, choose Linux kernel 3.x/2.6.x Driver <br> http://www.asix.com.tw/products.php?op=pItemdetail&PItemID=86;71;101
