@@ -6,9 +6,11 @@ https://www.miniand.com/forums/forums/2/topics/1?page=23
 <br><br>
 <b> Step 1: Install Kernel Source Code - Miniand </b>
 
+<br>
 See: How to Install Kernel Source:<br>
 https://www.miniand.com/forums/forums/2/topics/1?page=19
 
+<br>
 Install MK802 Linux Kernel Source Code
 
     sudo apt-get install git
@@ -25,44 +27,44 @@ Install MK802 Linux Kernel Source Code
     
     # Patch the Makefile and arch/arm/configs/sun4i_defconfig:
 
-    Makefile
-    --- a/Makefile
-    +++ b/Makefile
-    @@ -1,7 +1,7 @@
-    VERSION = 3
-    PATCHLEVEL = 0
-    SUBLEVEL = 36
-    -EXTRAVERSION =
-    +EXTRAVERSION = -t1
-    NAME = Sneaky Weasel
-
-    # DOCUMENTATION
-
-    arch/arm/configs/sun4i_defconfig b/arch/arm/configs/sun4i_defconfig
-    --- a/arch/arm/configs/sun4i_defconfig
-    +++ b/arch/arm/configs/sun4i_defconfig
-    @@ -336,9 +336,9 @@ CONFIG_VMSPLIT_3G=y
-    # CONFIG_VMSPLIT_2G is not set
-    # CONFIG_VMSPLIT_1G is not set
-    CONFIG_PAGE_OFFSET=0xC0000000
-    -# CONFIG_PREEMPT_NONE is not set
-    +CONFIG_PREEMPT_NONE=y
-    # CONFIG_PREEMPT_VOLUNTARY is not set
-    -CONFIG_PREEMPT=y
-    +CONFIG_PREEMPT=n
-    CONFIG_HZ=100
-    CONFIG_AEABI=y
+        Makefile
+        --- a/Makefile
+        +++ b/Makefile
+        @@ -1,7 +1,7 @@
+        VERSION = 3
+        PATCHLEVEL = 0
+        SUBLEVEL = 36
+        -EXTRAVERSION =
+        +EXTRAVERSION = -t1
+        NAME = Sneaky Weasel
     
-    # CONFIG_ARCH_SPARSEMEM_DEFAULT is not set
-    @@ -1636,6 +1636,7 @@ CONFIG_CLKSRC_MMIO=y
+        # DOCUMENTATION
     
-     #
-     # File systems
-     #
-    +CONFIG_SQUASHFS=m
-     CONFIG_EXT2_FS=y
-     # CONFIG_EXT2_FS_XATTR is not set
-     # CONFIG_EXT2_FS_XIP is not set
+        arch/arm/configs/sun4i_defconfig b/arch/arm/configs/sun4i_defconfig
+        --- a/arch/arm/configs/sun4i_defconfig
+        +++ b/arch/arm/configs/sun4i_defconfig
+        @@ -336,9 +336,9 @@ CONFIG_VMSPLIT_3G=y
+        # CONFIG_VMSPLIT_2G is not set
+        # CONFIG_VMSPLIT_1G is not set
+        CONFIG_PAGE_OFFSET=0xC0000000
+        -# CONFIG_PREEMPT_NONE is not set
+        +CONFIG_PREEMPT_NONE=y
+        # CONFIG_PREEMPT_VOLUNTARY is not set
+        -CONFIG_PREEMPT=y
+        +CONFIG_PREEMPT=n
+        CONFIG_HZ=100
+        CONFIG_AEABI=y
+        
+        # CONFIG_ARCH_SPARSEMEM_DEFAULT is not set
+        @@ -1636,6 +1636,7 @@ CONFIG_CLKSRC_MMIO=y
+        
+         #
+         # File systems
+         #
+        +CONFIG_SQUASHFS=m
+         CONFIG_EXT2_FS=y
+         # CONFIG_EXT2_FS_XATTR is not set
+         # CONFIG_EXT2_FS_XIP is not set
     
     # Create configuration: If necessary, edit arch/arm/configs/sun4i_defconfig to enable more modules.
     make ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabi- sun4i_defconfig
