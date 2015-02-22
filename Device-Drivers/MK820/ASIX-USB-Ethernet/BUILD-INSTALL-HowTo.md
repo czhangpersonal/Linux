@@ -97,7 +97,6 @@ Do the following to build and install kernel module. Note that there is already 
     
     modinfo asix
     modprobe -f asix    # -f: module symbol missing.
-
 <br>  
 Do "ifconfig" and eth1 will show up. And
     
