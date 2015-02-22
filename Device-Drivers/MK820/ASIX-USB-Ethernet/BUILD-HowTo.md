@@ -1,4 +1,5 @@
-<b> Step 0:  Install Ubuntu Linux 12.04 on miniand:</b><br>
+<b> Step 0:  Install Ubuntu Linux 12.04 on miniand:</b>
+
 https://www.miniand.com/forums/forums/2/topics/1?page=23
 
 <br>
