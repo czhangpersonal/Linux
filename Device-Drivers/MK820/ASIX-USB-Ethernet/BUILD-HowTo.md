@@ -55,7 +55,7 @@ Install MK802 Linux Kernel Source Code
     
     # CONFIG_ARCH_SPARSEMEM_DEFAULT is not set
     @@ -1636,6 +1636,7 @@ CONFIG_CLKSRC_MMIO=y
-
+    
      #
      # File systems
      #
@@ -63,91 +63,53 @@ Install MK802 Linux Kernel Source Code
      CONFIG_EXT2_FS=y
      # CONFIG_EXT2_FS_XATTR is not set
      # CONFIG_EXT2_FS_XIP is not set
-
-
-Create configuration: If necessary, edit arch/arm/configs/sun4i_defconfig to enable more modules.
-
-make ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabi- sun4i_defconfig
-
-
-
-Build the kernel modules only: it might fail but it is OK.
-
-make ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabi- -j4 modules
-
-
-
-# for building module later on:
-
-ln -s         ${MK802_DIR}/linux-allwinner         /lib/modules/3.0.36-t1+/build
-
-ln -s         ${MK802_DIR}         /lib/modules/3.0.36-t1+/linux-allwinner
+    
+    # Create configuration: If necessary, edit arch/arm/configs/sun4i_defconfig to enable more modules.
+    make ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabi- sun4i_defconfig
+    
+    # Build the kernel modules only: it might fail but it is OK.
+    make ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabi- -j4 modules
+    
+    # for building module later on:
+    ln -s         ${MK802_DIR}/linux-allwinner         /lib/modules/3.0.36-t1+/build
+    ln -s         ${MK802_DIR}         /lib/modules/3.0.36-t1+/linux-allwinner
 
 
     
 <b> Step 2: Install Driver for KY-LAN772AL (USB Ethenet Adapter) </b>
     
-    
-        Download the driver from below, choose Linux kernel 3.x/2.6.x Driver  
-    
-        http://www.asix.com.tw/products.php?op=pItemdetail&PItemID=86;71;101
-    
+Download the driver from below, choose Linux kernel 3.x/2.6.x Driver <br> http://www.asix.com.tw/products.php?op=pItemdetail&PItemID=86;71;101
     
     export ASIX_DIR=/media/USB16GB/asix    
-    
     cd $ASIX_DIR
-    
     make
     
     # make sure asix.ko is copied to somewhere under /lib/modules/3.0.36-t1+/kernel/drivers/net/usb. 
-    
     # If not successful with make install, do it manually, and then do “/sbin/depmod -a”
-    
     # Otherwise modprobe will complain “FATAL: Module asix.ko not found”
-    
     make install     
     
-    
     modinfo asix
-    
     modprobe -f asix    # -f: module symbol missing.
     
-    
-    Do ifconfig and eth1 will show up. And
-    
+Do ifconfig and eth1 will show up. And
     
     root@miniand:/media/usbdisk/mk802# ethtool -i eth0
-    
     driver: wemac
-    
     version: 1.00
-    
     firmware-version:
-    
     bus-info: wemac
-    
     supports-statistics: no
-    
     supports-test: no
-    
     supports-eeprom-access: yes
-    
     supports-register-dump: no
     
-    
     root@miniand:/media/usbdisk/mk802# ethtool -i eth1
-    
     driver: asix
-    
     version: 22-Aug-2005
-    
     firmware-version: ASIX AX88772A USB 2.0 Ethernet
-    
     bus-info: usb-sw-ehci-1.4
-    
     supports-statistics: no
-    
     supports-test: no
-    
     supports-eeprom-access: yes
     supports-register-dump: no
