@@ -1,9 +1,7 @@
 <b> Step 0:  Install Ubuntu Linux 12.04 on miniand:</b><br>
 https://www.miniand.com/forums/forums/2/topics/1?page=23
 
-<br><br><br>
-
-
+<br>
 <b> Step 1: Install Kernel Source - Miniand </b>
 
 See: How to Install Kernel Source:<br>
