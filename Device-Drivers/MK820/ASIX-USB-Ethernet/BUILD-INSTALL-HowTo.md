@@ -109,9 +109,9 @@ Do "ifconfig" and eth1 will show up. And
     supports-register-dump: no
     
     root@miniand:/media/usbdisk/mk802# ethtool -i eth1
-    <b>driver: asix<b>
+    driver: asix
     version: 22-Aug-2005
-    <b>firmware-version: ASIX AX88772A USB 2.0 Ethernet<b>
+    firmware-version: ASIX AX88772A USB 2.0 Ethernet
     bus-info: usb-sw-ehci-1.4
     supports-statistics: no
     supports-test: no
