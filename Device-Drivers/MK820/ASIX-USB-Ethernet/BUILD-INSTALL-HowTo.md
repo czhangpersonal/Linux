@@ -76,10 +76,11 @@ Install MK802 Linux Kernel Source Code
     ln -s   ${MK802_DIR}    /lib/modules/3.0.36-t1+/linux-allwinner
 
 
-<br><br><br>
+<br><br><
 
 <b> Step 2: Install Driver for KY-LAN772AL (USB Ethenet Adapter) </b>
-    
+
+<br>
 Download the driver from below, choose Linux kernel 3.x/2.6.x Driver <br> http://www.asix.com.tw/products.php?op=pItemdetail&PItemID=86;71;101
     
     export ASIX_DIR=/media/USB16GB/asix    
@@ -93,8 +94,9 @@ Download the driver from below, choose Linux kernel 3.x/2.6.x Driver <br> http:/
     
     modinfo asix
     modprobe -f asix    # -f: module symbol missing.
-    
-Do ifconfig and eth1 will show up. And
+
+<br>  
+Do "ifconfig" and eth1 will show up. And
     
     root@miniand:/media/usbdisk/mk802# ethtool -i eth0
     driver: wemac
@@ -107,9 +109,9 @@ Do ifconfig and eth1 will show up. And
     supports-register-dump: no
     
     root@miniand:/media/usbdisk/mk802# ethtool -i eth1
-    driver: asix
+    <b>driver: asix<b>
     version: 22-Aug-2005
-    firmware-version: ASIX AX88772A USB 2.0 Ethernet
+    <b>firmware-version: ASIX AX88772A USB 2.0 Ethernet<b>
     bus-info: usb-sw-ehci-1.4
     supports-statistics: no
     supports-test: no
