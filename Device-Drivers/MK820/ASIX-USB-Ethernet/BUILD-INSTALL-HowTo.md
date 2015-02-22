@@ -39,7 +39,8 @@ Install MK802 Linux Kernel Source Code
         NAME = Sneaky Weasel
     
         # DOCUMENTATION
-    
+        
+        
         arch/arm/configs/sun4i_defconfig b/arch/arm/configs/sun4i_defconfig
         --- a/arch/arm/configs/sun4i_defconfig
         +++ b/arch/arm/configs/sun4i_defconfig
@@ -54,10 +55,8 @@ Install MK802 Linux Kernel Source Code
         +CONFIG_PREEMPT=n
         CONFIG_HZ=100
         CONFIG_AEABI=y
-        
         # CONFIG_ARCH_SPARSEMEM_DEFAULT is not set
         @@ -1636,6 +1636,7 @@ CONFIG_CLKSRC_MMIO=y
-        
          #
          # File systems
          #
