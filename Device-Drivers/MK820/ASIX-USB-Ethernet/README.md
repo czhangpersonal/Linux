@@ -1,1 +1,1 @@
-# Device Driver for USB Ethernet KY-LAN772AL
+# Device Driver for USB Ethernet Adapter: KY-LAN772AL
