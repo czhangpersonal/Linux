@@ -4,7 +4,7 @@
 https://www.miniand.com/forums/forums/2/topics/1?page=23
 
 <br><br>
-<b> Step 1: Install Kernel Source - Miniand </b>
+<b> Step 1: Install Kernel Source Code - Miniand </b>
 
 See: How to Install Kernel Source:<br>
 https://www.miniand.com/forums/forums/2/topics/1?page=19
